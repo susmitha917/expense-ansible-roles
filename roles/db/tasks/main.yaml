@@ -4,13 +4,13 @@
       state: latest
 
 - name: Start and Enable MySQL server
-    ansible.builtin.service:
+  ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
 
 - name: install python mysql dependencies
-    ansible.builtin.pip:
+  ansible.builtin.pip:
       name:
       - PyMySQL
       - cryptography
