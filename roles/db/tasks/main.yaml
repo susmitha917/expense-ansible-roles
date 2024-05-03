@@ -1,16 +1,16 @@
-- name: Install MySQL Server
-  ansible.builtin.dnf:
+  - name: Install MySQL Server
+    ansible.builtin.dnf:
       name: mysql-server
       state: latest
 
-- name: Start and Enable MySQL server
-  ansible.builtin.service:
+  - name: Start and Enable MySQL server
+    ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
 
-- name: install python mysql dependencies
-  ansible.builtin.pip:
+  - name: install python mysql dependencies
+    ansible.builtin.pip:
       name:
       - PyMySQL
       - cryptography
